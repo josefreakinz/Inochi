@@ -457,6 +457,7 @@ section {
 }
 
 /* Estilos específicos para cada programa con su imagen de fondo - RUTAS CORREGIDAS */
+/* NOTA: 'url('../images/imagen.jpg')' es una ruta relativa desde el CSS (dentro de 'programa') a la carpeta 'images' (fuera de 'programa') */
 .program-sattva {
     background-image: url('../images/satva.jpg');
 }
