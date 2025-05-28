@@ -207,7 +207,7 @@ p {
 .carousel-item {
     min-width: 100%; /* Cada ítem ocupa el 100% del ancho del slide */
     height: 100%;
-    background-size: cover;
+    background-size: contain; /* <--- CAMBIO REALIZADO AQUÍ: de 'cover' a 'contain' */
     background-position: center;
     background-repeat: no-repeat;
     display: flex; /* Para centrar el contenido (si lo hubiera en el item) */
