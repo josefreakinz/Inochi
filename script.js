@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = document.querySelector('.carousel-button.prev');
     const nextBtn = document.querySelector('.carousel-button.next');
     const dotsContainer = document.querySelector('.carousel-dots');
+    const heroContent = document.querySelector('.hero-content'); // <-- AÑADIDO: Selecciona el contenido del hero
 
     // Cantidad total de elementos en el carrusel
     const totalItems = carouselItems.length;
@@ -49,6 +50,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const offset = -currentIndex * 100;
         carouselSlide.style.transform = `translateX(${offset}%)`; // Aplica la transformación CSS
         updateDots(); // Actualiza el estado de los puntos indicadores
+
+        // <-- AÑADIDO: Lógica para mostrar/ocultar el hero-content basado en el índice
+        if (heroContent) { // Asegurarse de que heroContent existe
+            if (currentIndex === 0) { // Asumiendo que Inochilogo.jpg es la primera imagen (índice 0)
+                heroContent.style.opacity = '0'; // Hace el texto transparente
+                heroContent.style.pointerEvents = 'none'; // Evita interacciones (clics, selección)
+            } else {
+                heroContent.style.opacity = '1'; // Hace el texto visible
+                heroContent.style.pointerEvents = 'auto'; // Habilita interacciones
+            }
+        }
     }
 
     // Función para crear los puntos indicadores dinámicamente
@@ -96,8 +108,9 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCarousel(); // Mueve el carrusel a la imagen anterior
     });
 
-    // Inicializar los puntos al cargar la página
+    // Inicializar los puntos y el carrusel al cargar la página
     createDots();
+    updateCarousel(); // <-- AÑADIDO: Llama a updateCarousel al inicio para aplicar el estado inicial
 
     // Opcional: Auto-avance del carrusel
     let autoSlideInterval = setInterval(() => {
