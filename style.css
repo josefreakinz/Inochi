@@ -25,6 +25,47 @@
     padding: 0;
     box-sizing: border-box;
 }
+.promesa_valor {
+    text-align: center; /* Centra el contenido de la sección */
+    padding: 80px 0; /* Ajusta el padding si quieres más o menos espacio vertical */
+    background-color: var(--color-light-grey-bg); /* O el color que prefieras para esta sección */
+}
+
+.promesa_valor p {
+    font-size: 1.5em; 
+    text-align: center;
+    font-weight: 700; 
+    color: var(--color-dark-text); 
+    max-width: 900px;
+    margin: 0 auto 20px auto; 
+    line-height: 1.6;
+}
+.valor-contenido {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Para responsividad */
+}
+
+.huella-img {
+    max-width: 180px;
+    height: auto;
+}
+
+.valor-texto {
+    flex: 1;
+    min-width: 280px;
+}
+.programs-section p{
+    font-size: 1.5em; 
+    text-align: center; 
+    font-weight: 700; 
+    color: var(--color-dark-text);
+    max-width: 900px;
+    margin: 0 auto 20px auto; 
+    line-height: 1.6; 
+
+}
 
 html {
     scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en los enlaces de la navbar */
@@ -207,7 +248,7 @@ p {
 .carousel-item {
     min-width: 100%; /* Cada ítem ocupa el 100% del ancho del slide */
     height: 100%;
-    background-size: contain; /* <-- CAMBIO CLAVE AQUÍ: de 'cover' a 'contain' */
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex; /* Para centrar el contenido (si lo hubiera en el item) */
@@ -237,7 +278,6 @@ p {
     background-color: rgba(0, 0, 0, 0.3); /* Fondo semitransparente para el texto */
     max-width: 800px;
     text-align: center; /* Asegura que el contenido esté centrado */
-    transition: opacity 0.5s ease-in-out; /* <-- AÑADIDO: Para transición suave del texto */
 }
 
 .hero-content h2 {
