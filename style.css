@@ -635,6 +635,28 @@ footer p {
         font-size: 1.1em;
     }
 }
+.whatsapp-boton {
+    display: flex;
+    justify-content: center;
+    margin: 40px auto 60px auto; /* margen superior e inferior más amplio */
+}
+
+.whatsapp-boton a {
+    background-color: #25D366;
+    color: white;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.whatsapp-boton a:hover {
+    background-color: #1ebc59;
+    transform: scale(1.05);
+}
 
 /* Tablets verticales y móviles grandes (hasta 768px) */
 @media (max-width: 768px) {
