@@ -66,7 +66,15 @@
     line-height: 1.6; 
 
 }
-
+.cuadro
+{
+    background-color: #f4f4f4;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(79, 241, 106, 0.1);
+}
 html {
     scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en los enlaces de la navbar */
 }
