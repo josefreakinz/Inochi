@@ -26,45 +26,31 @@
     box-sizing: border-box;
 }
 
-/* Modificación: carousel-item para background-image sigue igual, pero añadimos una clase para el logo */
 .carousel-item {
-    background-size: cover;     /* Por defecto para las imágenes de fondo */
+    /* Estas propiedades ahora se aplicarán por defecto a todas las slides */
     background-repeat: no-repeat;
     background-position: center;
-    height: 500px;              /* Altura base del carrusel */
-    display: flex; /* Añadido para centrar contenido si es <img> */
-    justify-content: center; /* Añadido para centrar contenido si es <img> */
-    align-items: center; /* Añadido para centrar contenido si es <img> */
+    height: 100%; /* Ocupa el 100% de la altura de su contenedor (.hero-section) */
+    display: flex; /* Para centrar el contenido (si lo hubiera en el item, como una <img>) */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    /* Capa oscura sobre cada imagen del carrusel */
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* Asegura que la imagen de fondo no se desborde */
 }
 
-/* Estilos específicos para el slide del logo */
-.carousel-item.carousel-logo-slide {
-    background-image: none !important; /* Asegura que no tenga background-image por si acaso */
-    background-color: var(--color-white-bg); /* Fondo blanco para el logo si es transparente */
-}
-
-/* Ocultar la capa oscura solo para el slide del logo */
-.carousel-item.carousel-logo-slide::before {
-    display: none;
-}
-
-/* Estilos para la imagen del logo dentro del slide */
-.full-logo-img {
-    max-width: 90%; /* Ajusta el tamaño máximo del logo */
-    max-height: 90%; /* Ajusta el tamaño máximo del logo */
-    object-fit: contain; /* Asegura que la imagen completa sea visible sin recortarse */
-    display: block; /* Elimina espacio extra */
-    z-index: 2; /* Asegura que esté sobre cualquier otra capa (aunque la hayamos ocultado) */
+/* IMPORTANTE: ESTO AHORA ES background-size: contain; para que las imágenes de fondo se vean completas */
+.carousel-item:not(.carousel-logo-slide) { /* Aplica esto a todas las slides EXCEPTO la del logo */
+    background-size: contain; /* Mostrará la imagen completa, con posibles barras si la proporción no coincide */
 }
 
 
-.promesa_valor {
-    text-align: center; /* Centra el contenido de la sección */
-    padding: 80px 0; /* Ajusta el padding si quieres más o menos espacio vertical */
-    background-color: var(--color-light-grey-bg); /* O el color que prefieras para esta sección */
-}
+/* Esto no debe afectar al carrusel directamente si usas background-size: contain; */
+/* .promesa_valor {
+    text-align: center;
+    padding: 80px 0;
+    background-color: var(--color-light-grey-bg);
+} */
 
 .promesa_valor p {
     font-size: 1.5em;
@@ -75,6 +61,7 @@
     margin: 0 auto 20px auto;
     line-height: 1.6;
 }
+
 .valor-contenido {
     display: flex;
     align-items: center;
@@ -91,7 +78,8 @@
     flex: 1;
     min-width: 280px;
 }
-.programs-section p{
+
+.programs-section p {
     font-size: 1.5em;
     text-align: center;
     font-weight: 700;
@@ -99,10 +87,9 @@
     max-width: 900px;
     margin: 0 auto 20px auto;
     line-height: 1.6;
-
 }
-.cuadro
-{
+
+.cuadro {
     background-color: #f4f4f4;
     padding: 20px;
     margin: 30px auto;
@@ -110,66 +97,64 @@
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(79, 241, 106, 0.1);
 }
+
 html {
-    scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en los enlaces de la navbar */
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: var(--font-body);
-    line-height: 1.7; /* Ligeramente más espaciado para mejor legibilidad */
+    line-height: 1.7;
     color: var(--color-light-text);
     background-color: var(--color-white-bg);
-    -webkit-font-smoothing: antialiased; /* Suavizado de fuentes para Webkit */
-    -moz-osx-font-smoothing: grayscale; /* Suavizado de fuentes para Firefox */
-    font-size: 16px; /* Tamaño de fuente base para REMs */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
 }
 
-/* Asegurar que las imágenes no desborden sus contenedores */
 img {
     max-width: 100%;
     height: auto;
-    display: block; /* Elimina espacio extra debajo de las imágenes */
+    display: block;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px; /* Padding horizontal para evitar que el contenido toque los bordes */
+    padding: 0 20px;
 }
 
-/* Estilos de encabezados */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     color: var(--color-dark-text);
-    margin-bottom: 20px; /* Aumentado ligeramente para mejor espaciado */
-    font-weight: 700; /* Negrita por defecto para encabezados */
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
 h1 {
-    font-size: 2.2em; /* Ajustado para la barra de navegación */
+    font-size: 2.2em;
 }
 
 h2 {
-    font-size: 2.8em; /* Tamaño de los títulos de sección */
+    font-size: 2.8em;
     text-align: center;
-    margin-bottom: 50px; /* Más espacio debajo del título de sección */
+    margin-bottom: 50px;
     position: relative;
-    padding-bottom: 15px; /* Espacio para la línea decorativa */
+    padding-bottom: 15px;
     font-weight: 700;
-    color: var(--color-dark-text); /* Aseguramos color para h2 */
+    color: var(--color-dark-text);
 }
 
-/* Línea decorativa debajo de los títulos de sección */
 h2::after {
     content: '';
     position: absolute;
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    width: 80px; /* Ancho de la línea */
-    height: 5px; /* Grosor de la línea */
+    width: 80px;
+    height: 5px;
     background-color: var(--color-primary-green);
-    border-radius: 2.5px; /* Bordes redondeados */
+    border-radius: 2.5px;
 }
 
 h3 {
@@ -188,7 +173,7 @@ a:hover {
 }
 
 ul {
-    list-style: none; /* Eliminar los puntos de lista por defecto */
+    list-style: none;
 }
 
 p {
@@ -202,55 +187,54 @@ p {
     align-items: center;
     background-color: var(--color-white-bg);
     padding: 15px 30px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
-    z-index: 1000; /* Asegura que la navbar esté siempre arriba */
+    z-index: 1000;
 }
 
 .navbar .logo {
     display: flex;
     align-items: center;
-    gap: 10px; /* Espacio entre el logo y el título */
+    gap: 10px;
 }
 
 .navbar .logo img {
-    height: 60px; /* Ajustado para ser similar al tamaño del título */
-    width: auto; /* Mantiene la proporción de la imagen */
-    object-fit: contain; /* Asegura que la imagen se ajuste bien sin cortar */
+    height: 60px;
+    width: auto;
+    object-fit: contain;
 }
 
 .navbar .logo h1 {
-    font-size: 1.8em; /* Tamaño del título en la navbar */
+    font-size: 1.8em;
     color: var(--color-dark-text);
-    margin-bottom: 0; /* Anula el margen inferior predeterminado del h1 */
-    line-height: 1.2; /* Ajuste para alinear con la imagen */
+    margin-bottom: 0;
+    line-height: 1.2;
 }
 
 .navbar .nav-links {
     display: flex;
-    gap: 30px; /* Espacio entre los elementos del menú */
+    gap: 30px;
 }
 
 .navbar .nav-links li {
-    position: relative; /* Para el efecto de la línea inferior */
+    position: relative;
 }
 
 .navbar .nav-links a {
     font-family: var(--font-heading);
-    font-weight: 600; /* Seminegrita para los enlaces */
+    font-weight: 600;
     color: var(--color-dark-text);
-    padding: 8px 0; /* Más padding para hacer el área de click más grande */
-    display: block; /* Para que el padding funcione bien */
+    padding: 8px 0;
+    display: block;
     transition: color var(--transition-speed);
 }
 
-/* Efecto de línea inferior al pasar el ratón por los enlaces de la navbar */
 .navbar .nav-links a::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: 0; /* Posicionar la línea en la parte inferior del enlace */
+    bottom: 0;
     width: 0;
     height: 3px;
     background-color: var(--color-primary-green);
@@ -264,7 +248,7 @@ p {
 /* ESTILOS DE LA SECCIÓN HERO (INICIO) - AHORA CON CARRUSEL */
 .hero-section {
     position: relative;
-    height: 600px; /* Altura fija para el carrusel */
+    height: 600px; /* Altura fija para el carrusel y las imágenes */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -288,6 +272,22 @@ p {
     transition: transform 0.5s ease-in-out;
 }
 
+/* Estilo específico para la slide del logo */
+.carousel-item.carousel-logo-slide {
+    background-image: none !important; /* Asegura que no tenga background-image */
+    background-color: var(--color-white-bg); /* Fondo blanco para el logo si es PNG transparente */
+    /* El logo-content se centrará con display: flex del .carousel-item */
+}
+
+/* Clase para la imagen <img> del logo dentro del carrusel */
+.full-logo-img {
+    max-width: 90%; /* Ajusta el ancho máximo del logo */
+    max-height: 90%; /* Ajusta la altura máxima del logo */
+    object-fit: contain; /* Asegura que la imagen completa sea visible */
+    display: block; /* Elimina espacio extra debajo de la imagen */
+    z-index: 2; /* Asegura que la imagen esté por encima de la capa oscura */
+}
+
 /* Capa oscura sobre cada imagen del carrusel */
 .carousel-item::before {
     content: '';
@@ -301,16 +301,21 @@ p {
     transition: background-color var(--transition-speed);
 }
 
+/* Asegura que la capa oscura NO se aplique a la slide del logo si no la quieres */
+.carousel-item.carousel-logo-slide::before {
+    display: none; /* Oculta la capa oscura para la slide del logo */
+}
+
 /* Posicionamiento del contenido del Hero sobre el carrusel */
 .hero-content {
     position: relative;
     z-index: 2;
     padding: 30px;
     border-radius: 12px;
-    background-color: rgba(0, 0, 0, 0.3); /* Fondo semitransparente para el texto */
+    background-color: rgba(0, 0, 0, 0.3);
     max-width: 800px;
     text-align: center;
-    transition: opacity 0.5s ease; /* Añadido para la transición de opacidad */
+    transition: opacity 0.5s ease; /* Transición para la visibilidad del hero-content */
 }
 
 .hero-content h2 {
@@ -399,13 +404,13 @@ p {
 
 .btn:hover {
     background-color: var(--color-primary-green-dark);
-    transform: translateY(-3px); /* Pequeño efecto de elevación */
+    transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* ESTILOS DE SECCIONES GENERALES */
 section {
-    padding: 100px 0; /* Mayor padding para separar secciones */
+    padding: 100px 0;
     text-align: left;
 }
 
@@ -417,16 +422,16 @@ section {
 .about-content {
     display: flex;
     flex-wrap: wrap;
-    gap: 50px; /* Más espacio entre las columnas */
+    gap: 50px;
     justify-content: center;
 }
 
 .mission-vision, .values-axes {
     flex: 1;
-    min-width: 350px; /* Aumentado el ancho mínimo */
+    min-width: 350px;
     background-color: var(--color-white-bg);
-    padding: 40px; /* Mayor padding interno */
-    border-radius: 12px; /* Bordes más redondeados */
+    padding: 40px;
+    border-radius: 12px;
     box-shadow: var(--box-shadow-light);
     transition: box-shadow var(--transition-speed);
 }
@@ -437,15 +442,15 @@ section {
 
 .mission-vision h3, .values-axes h3 {
     color: var(--color-primary-green);
-    font-size: 2em; /* H3 más grandes */
+    font-size: 2em;
     margin-bottom: 20px;
-    border-bottom: 3px solid var(--color-primary-green); /* Línea más gruesa */
+    border-bottom: 3px solid var(--color-primary-green);
     padding-bottom: 10px;
 }
 
 .about-section ul {
-    list-style: disc; /* Vuelven los puntos de lista */
-    margin-left: 25px; /* Más indentación */
+    list-style: disc;
+    margin-left: 25px;
     color: var(--color-light-text);
 }
 
@@ -467,13 +472,13 @@ section {
     margin-left: auto;
     margin-right: auto;
     line-height: 1.8;
-    color: var(--color-dark-text); /* Texto oscuro para el intro de programas */
+    color: var(--color-dark-text);
 }
 
 .program-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px; /* Mayor espacio entre las tarjetas */
+    gap: 40px;
 }
 
 .program-card {
@@ -489,7 +494,7 @@ section {
     overflow: hidden;
     color: var(--color-white-bg);
     box-shadow: var(--box-shadow-light);
-    background-size: cover;
+    background-size: cover; /* Las tarjetas de programa seguirán usando 'cover' */
     background-position: center center;
     background-repeat: no-repeat;
 }
@@ -502,13 +507,13 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.45); /* Capa oscura semitransparente */
-    z-index: 1; /* Asegura que esté debajo del contenido */
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 1;
     transition: background-color var(--transition-speed);
 }
 
 .program-card:hover::before {
-    background-color: rgba(0, 0, 0, 0.65); /* Más oscuro al pasar el ratón */
+    background-color: rgba(0, 0, 0, 0.65);
 }
 
 /* Asegura que el contenido esté sobre la capa de superposición */
@@ -516,13 +521,13 @@ section {
 .program-card p {
     position: relative;
     z-index: 2;
-    color: var(--color-white-bg); /* Texto blanco para legibilidad */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Sombra para el texto */
+    color: var(--color-white-bg);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .program-card h3 {
-    font-size: 2.2em; /* Ligeramente más grande */
-    margin-bottom: 15px; /* Ajuste para espacio entre título y párrafo */
+    font-size: 2.2em;
+    margin-bottom: 15px;
 }
 
 .program-card p {
@@ -572,7 +577,7 @@ section {
     font-size: 1.2em;
     margin-bottom: 15px;
     line-height: 1.8;
-    color: var(--color-dark-text); /* Texto oscuro para la información de contacto */
+    color: var(--color-dark-text);
 }
 
 .contact-info strong {
@@ -591,7 +596,7 @@ footer {
     text-align: center;
     padding: 40px 20px;
     font-size: 0.95em;
-    margin-top: 0; /* Asegura que no haya margen superior */
+    margin-top: 0;
 }
 
 footer p {
@@ -603,7 +608,7 @@ footer p {
 /* Tablets horizontales y laptops pequeñas (hasta 992px) */
 @media (max-width: 992px) {
     .container {
-        padding: 0 25px; /* Más padding en los lados */
+        padding: 0 25px;
     }
 
     h2 {
@@ -625,7 +630,7 @@ footer p {
     }
 
     .about-content {
-        gap: 40px; /* Reducir espacio entre columnas */
+        gap: 40px;
     }
     .mission-vision, .values-axes {
         padding: 35px;
@@ -639,7 +644,7 @@ footer p {
     }
 
     .program-grid {
-        gap: 30px; /* Reducir espacio entre tarjetas */
+        gap: 30px;
     }
     .program-card {
         padding: 30px;
@@ -662,7 +667,7 @@ footer p {
 .whatsapp-boton {
     display: flex;
     justify-content: center;
-    margin: 40px auto 60px auto; /* margen superior e inferior más amplio */
+    margin: 40px auto 60px auto;
 }
 
 .whatsapp-boton a {
@@ -688,11 +693,11 @@ footer p {
     .navbar {
         flex-direction: column;
         padding: 15px 20px;
-        align-items: flex-start; /* Alinear a la izquierda cuando se apila */
+        align-items: flex-start;
     }
     .navbar .logo {
         margin-bottom: 15px;
-        flex-direction: row; /* Mantener logo y título en la misma línea */
+        flex-direction: row;
         gap: 8px;
     }
     .navbar .logo img {
@@ -704,7 +709,7 @@ footer p {
     .navbar .nav-links {
         flex-direction: column;
         width: 100%;
-        text-align: left; /* Alinear texto a la izquierda en móviles */
+        text-align: left;
         gap: 10px;
         margin-top: 10px;
     }
@@ -713,12 +718,12 @@ footer p {
         font-size: 1em;
     }
     .navbar .nav-links a::after {
-        display: none; /* Ocultar el efecto de línea en móviles */
+        display: none;
     }
 
     /* Hero Section */
     .hero-section {
-        height: 500px; /* Ajusta la altura si es necesario para móviles */
+        height: 500px; /* Ajusta la altura del carrusel para pantallas más pequeñas */
     }
     .hero-content {
         padding: 25px;
@@ -765,7 +770,7 @@ footer p {
         gap: 30px;
     }
     .mission-vision, .values-axes {
-        min-width: unset; /* Eliminar el min-width para que ocupe todo el ancho */
+        min-width: unset;
         width: 100%;
         padding: 30px;
     }
@@ -777,14 +782,13 @@ footer p {
         font-size: 0.95em;
     }
 
-
     /* Programs Section */
     .programs-intro {
         font-size: 1.15em;
         margin-bottom: 40px;
     }
     .program-grid {
-        grid-template-columns: 1fr; /* Una columna por tarjeta */
+        grid-template-columns: 1fr;
         gap: 25px;
     }
     .program-card {
