@@ -25,14 +25,41 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Modificación: carousel-item para background-image sigue igual, pero añadimos una clase para el logo */
 .carousel-item {
-  min-width: 50%;
-    height: 50%;
-    background-size: contain; /* ¡Cambiado a 'contain'! */
-    background-position: center;
+    background-size: cover;     /* Por defecto para las imágenes de fondo */
     background-repeat: no-repeat;
-    /* ... otras propiedades ... */             /* puedes ajustar la altura según tu diseño */
+    background-position: center;
+    height: 500px;              /* Altura base del carrusel */
+    display: flex; /* Añadido para centrar contenido si es <img> */
+    justify-content: center; /* Añadido para centrar contenido si es <img> */
+    align-items: center; /* Añadido para centrar contenido si es <img> */
+    position: relative;
+    overflow: hidden;
 }
+
+/* Estilos específicos para el slide del logo */
+.carousel-item.carousel-logo-slide {
+    background-image: none !important; /* Asegura que no tenga background-image por si acaso */
+    background-color: var(--color-white-bg); /* Fondo blanco para el logo si es transparente */
+}
+
+/* Ocultar la capa oscura solo para el slide del logo */
+.carousel-item.carousel-logo-slide::before {
+    display: none;
+}
+
+/* Estilos para la imagen del logo dentro del slide */
+.full-logo-img {
+    max-width: 90%; /* Ajusta el tamaño máximo del logo */
+    max-height: 90%; /* Ajusta el tamaño máximo del logo */
+    object-fit: contain; /* Asegura que la imagen completa sea visible sin recortarse */
+    display: block; /* Elimina espacio extra */
+    z-index: 2; /* Asegura que esté sobre cualquier otra capa (aunque la hayamos ocultado) */
+}
+
+
 .promesa_valor {
     text-align: center; /* Centra el contenido de la sección */
     padding: 80px 0; /* Ajusta el padding si quieres más o menos espacio vertical */
@@ -40,12 +67,12 @@
 }
 
 .promesa_valor p {
-    font-size: 1.5em; 
+    font-size: 1.5em;
     text-align: center;
-    font-weight: 700; 
-    color: var(--color-dark-text); 
+    font-weight: 700;
+    color: var(--color-dark-text);
     max-width: 900px;
-    margin: 0 auto 20px auto; 
+    margin: 0 auto 20px auto;
     line-height: 1.6;
 }
 .valor-contenido {
@@ -65,23 +92,23 @@
     min-width: 280px;
 }
 .programs-section p{
-    font-size: 1.5em; 
-    text-align: center; 
-    font-weight: 700; 
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: 700;
     color: var(--color-dark-text);
     max-width: 900px;
-    margin: 0 auto 20px auto; 
-    line-height: 1.6; 
+    margin: 0 auto 20px auto;
+    line-height: 1.6;
 
 }
 .cuadro
 {
     background-color: #f4f4f4;
-  padding: 20px;
-  margin: 30px auto;
-  max-width: 800px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(79, 241, 106, 0.1);
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(79, 241, 106, 0.1);
 }
 html {
     scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en los enlaces de la navbar */
@@ -236,44 +263,32 @@ p {
 
 /* ESTILOS DE LA SECCIÓN HERO (INICIO) - AHORA CON CARRUSEL */
 .hero-section {
-    position: relative; /* Esencial para posicionar el carrusel y el contenido */
+    position: relative;
     height: 600px; /* Altura fija para el carrusel */
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Oculta partes de las imágenes que se salgan */
-    color: var(--color-white-bg); /* Mantiene el color de texto blanco */
+    overflow: hidden;
+    color: var(--color-white-bg);
 }
 
 /* Estilos del contenedor del carrusel */
 .carousel-container {
     width: 100%;
     height: 100%;
-    position: absolute; /* Ocupa todo el espacio de .hero-section */
+    position: absolute;
     top: 0;
     left: 0;
     overflow: hidden;
 }
 
 .carousel-slide {
-    display: flex; /* Para que los items se alineen horizontalmente */
+    display: flex;
     height: 100%;
-    transition: transform 0.5s ease-in-out; /* Transición para el desplazamiento del slide */
+    transition: transform 0.5s ease-in-out;
 }
 
-.carousel-item {
-    min-width: 100%; /* Cada ítem ocupa el 100% del ancho del slide */
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex; /* Para centrar el contenido (si lo hubiera en el item) */
-    justify-content: center;
-    align-items: center;
-    /* Capa oscura sobre cada imagen del carrusel */
-    position: relative;
-}
-
+/* Capa oscura sobre cada imagen del carrusel */
 .carousel-item::before {
     content: '';
     position: absolute;
@@ -283,17 +298,19 @@ p {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.45); /* Capa semitransparente oscura */
     z-index: 1;
+    transition: background-color var(--transition-speed);
 }
 
 /* Posicionamiento del contenido del Hero sobre el carrusel */
 .hero-content {
-    position: relative; /* Cambiado de absolute para no depender tanto de la altura del carrusel */
-    z-index: 2; /* Asegura que esté por encima de la capa oscura */
+    position: relative;
+    z-index: 2;
     padding: 30px;
     border-radius: 12px;
     background-color: rgba(0, 0, 0, 0.3); /* Fondo semitransparente para el texto */
     max-width: 800px;
-    text-align: center; /* Asegura que el contenido esté centrado */
+    text-align: center;
+    transition: opacity 0.5s ease; /* Añadido para la transición de opacidad */
 }
 
 .hero-content h2 {
@@ -321,7 +338,7 @@ p {
     padding: 15px 20px;
     cursor: pointer;
     font-size: 2em;
-    z-index: 3; /* Por encima del contenido y el carrusel */
+    z-index: 3;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
@@ -467,11 +484,11 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 380px; /* Asegura una altura mínima para que la imagen se vea bien y el texto quepa */
-    position: relative; /* Para la capa de superposición */
-    overflow: hidden; /* Asegura que la imagen de fondo no se desborde */
-    color: var(--color-white-bg); /* Por defecto, el texto será blanco sobre la imagen */
-    box-shadow: var(--box-shadow-light); /* Mantenemos una sombra base */
+    min-height: 380px;
+    position: relative;
+    overflow: hidden;
+    color: var(--color-white-bg);
+    box-shadow: var(--box-shadow-light);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -514,7 +531,6 @@ section {
 }
 
 /* Estilos específicos para cada programa con su imagen de fondo - RUTAS CORREGIDAS */
-/* NOTA: 'url('../images/imagen.jpg')' es una ruta relativa desde el CSS (dentro de 'programa') a la carpeta 'images' (fuera de 'programa') */
 .program-sattva {
     background-image: url('../images/satva.jpg');
 }
@@ -702,7 +718,7 @@ footer p {
 
     /* Hero Section */
     .hero-section {
-        height: 500px;
+        height: 500px; /* Ajusta la altura si es necesario para móviles */
     }
     .hero-content {
         padding: 25px;
