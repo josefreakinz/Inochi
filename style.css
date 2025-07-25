@@ -29,7 +29,7 @@
     background-size: contain;    /* mostrar la imagen completa sin recortes */
     background-repeat: no-repeat;
     background-position: center;
-    height: 500px;               /* puedes ajustar la altura según tu diseño */
+    height: 250px;               /* puedes ajustar la altura según tu diseño */
 }
 .promesa_valor {
     text-align: center; /* Centra el contenido de la sección */
