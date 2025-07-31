@@ -390,49 +390,114 @@ section {
 }
 
 /* SECCIÓN ACERCA DE NOSOTROS */
+/* Fondo general de la sección */
 .about-section {
-    background-color: var(--color-light-grey-bg);
+    background-color: #f7f7f7;
+    padding: 80px 20px;
+    text-align: center;
 }
 
+/* Título principal */
+.about-section h2 {
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.about-section h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #3ac23d;
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+/* Subtítulo de introducción */
+.about-intro {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #444;
+}
+
+/* Contenedor flexible de tarjetas */
 .about-content {
     display: flex;
     flex-wrap: wrap;
-    gap: 50px; /* Más espacio entre las columnas */
     justify-content: center;
+    gap: 40px;
 }
 
-.mission-vision, .values-axes {
-    flex: 1;
-    min-width: 350px; /* Aumentado el ancho mínimo */
-    background-color: var(--color-white-bg);
-    padding: 40px; /* Mayor padding interno */
-    border-radius: 12px; /* Bordes más redondeados */
-    box-shadow: var(--box-shadow-light);
-    transition: box-shadow var(--transition-speed);
+/* Tarjetas para misión, visión, valores y ejes */
+.mission-vision {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+    flex: 1 1 350px;
+    max-width: 500px;
+    text-align: left;
 }
 
-.mission-vision:hover, .values-axes:hover {
-    box-shadow: var(--box-shadow-hover);
+/* Títulos dentro de tarjetas */
+.mission-vision h3 {
+    color: #3ac23d;
+    font-weight: 700;
+    font-size: 1.6em;
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #3ac23d;
+    padding-bottom: 8px;
 }
 
-.mission-vision h3, .values-axes h3 {
-    color: var(--color-primary-green);
-    font-size: 2em; /* H3 más grandes */
+/* Párrafos */
+.mission-vision p {
+    font-size: 1em;
+    line-height: 1.7;
+    color: #333;
     margin-bottom: 20px;
-    border-bottom: 3px solid var(--color-primary-green); /* Línea más gruesa */
-    padding-bottom: 10px;
 }
 
-.about-section ul {
-    list-style: disc; /* Vuelven los puntos de lista */
-    margin-left: 25px; /* Más indentación */
-    color: var(--color-light-text);
+/* Listas dentro de tarjetas */
+.mission-vision ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 10px;
 }
 
-.about-section ul li {
-    margin-bottom: 10px;
-    font-size: 1.1em;
+.mission-vision li {
+    font-size: 1em;
+    color: #444;
+    margin-bottom: 8px;
 }
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .mission-vision {
+        max-width: 100%;
+    }
+
+    .about-section h2 {
+        font-size: 2.2em;
+    }
+
+    .mission-vision h3 {
+        font-size: 1.4em;
+    }
+
+    .mission-vision p {
+        font-size: 0.95em;
+    }
+}
+
 
 /* SECCIÓN NUESTROS PROGRAMAS */
 .programs-section {
