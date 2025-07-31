@@ -71,10 +71,7 @@
     line-height: 1.6; 
 
 }
-.mission-vision ul {
-    list-style-type: none;
-    padding-left: 0;
-}
+
 .cuadro
 {
     background-color: #f4f4f4;
@@ -209,7 +206,11 @@ p {
 .navbar .nav-links li {
     position: relative; /* Para el efecto de la línea inferior */
 }
-
+.about-section ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
 .navbar .nav-links a {
     font-family: var(--font-heading);
     font-weight: 600; /* Seminegrita para los enlaces */
