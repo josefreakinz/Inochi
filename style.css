@@ -1,17 +1,17 @@
-/* VARIABLES CSS (Para facilitar la gestión de colores y fuentes) */
+/* VARIABLES CSS */
 :root {
-    --color-primary-green: #66CC33; /* Verde vibrante del logo, ajustado */
-    --color-primary-green-dark: #4CAF50; /* Un verde ligeramente más oscuro para :hover */
-    --color-dark-text: #333333; /* Gris muy oscuro para el texto principal */
-    --color-light-text: #666666; /* Gris más claro para párrafos */
-    --color-white-bg: #FFFFFF; /* Blanco puro para fondos principales */
-    --color-light-grey-bg: #f8f8f8; /* Gris muy claro para secciones alternas */
-    --color-footer-bg: #222222; /* Fondo oscuro para el pie de página */
+    --color-primary-green: #66CC33;
+    --color-primary-green-dark: #4CAF50;
+    --color-dark-text: #333333;
+    --color-light-text: #666666;
+    --color-white-bg: #FFFFFF;
+    --color-light-grey-bg: #f8f8f8;
+    --color-footer-bg: #222222;
 
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
 
-    --transition-speed: 0.3s ease; /* Velocidad de las transiciones */
+    --transition-speed: 0.3s ease;
     --box-shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08);
     --box-shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
@@ -22,124 +22,61 @@
     padding: 0;
     box-sizing: border-box;
 }
-.carousel-item {
-  min-width: 50%;
-    height: 50%;
-    background-size: contain; /* ¡Cambiado a 'contain'! */
-    background-position: center;
-    background-repeat: no-repeat;
-    /* ... otras propiedades ... /             / puedes ajustar la altura según tu diseño */
-}
-.promesa_valor {
-    text-align: center; /* Centra el contenido de la sección */
-    padding: 80px 0; /* Ajusta el padding si quieres más o menos espacio vertical */
-    background-color: var(--color-light-grey-bg); /* O el color que prefieras para esta sección */
-}
 
-.promesa_valor p {
-    font-size: 1.5em; 
-    text-align: center;
-    font-weight: 700; 
-    color: var(--color-dark-text); 
-    max-width: 900px;
-    margin: 0 auto 20px auto; 
-    line-height: 1.6;
-}
-.valor-contenido {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap; /* Para responsividad */
-}
-
-.huella-img {
-    max-width: 180px;
-    height: auto;
-}
-
-.valor-texto {
-    flex: 1;
-    min-width: 280px;
-}
-.programs-section p{
-    font-size: 1.5em; 
-    text-align: center; 
-    font-weight: 700; 
-    color: var(--color-dark-text);
-    max-width: 900px;
-    margin: 0 auto 20px auto; 
-    line-height: 1.6; 
-
-}
-.cuadro
-{
-    background-color: #f4f4f4;
-  padding: 20px;
-  margin: 30px auto;
-  max-width: 800px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(79, 241, 106, 0.1);
-}
 html {
-    scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en los enlaces de la navbar */
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: var(--font-body);
-    line-height: 1.7; /* Ligeramente más espaciado para mejor legibilidad */
+    line-height: 1.7;
     color: var(--color-light-text);
     background-color: var(--color-white-bg);
-    -webkit-font-smoothing: antialiased; /* Suavizado de fuentes para Webkit */
-    -moz-osx-font-smoothing: grayscale; /* Suavizado de fuentes para Firefox */
-    font-size: 16px; /* Tamaño de fuente base para REMs */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
 }
 
-/* Asegurar que las imágenes no desborden sus contenedores */
 img {
     max-width: 100%;
     height: auto;
-    display: block; /* Elimina espacio extra debajo de las imágenes */
+    display: block;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px; /* Padding horizontal para evitar que el contenido toque los bordes */
+    padding: 0 20px;
 }
 
-/* Estilos de encabezados */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     color: var(--color-dark-text);
-    margin-bottom: 20px; /* Aumentado ligeramente para mejor espaciado */
-    font-weight: 700; /* Negrita por defecto para encabezados */
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
-h1 {
-    font-size: 2.2em; /* Ajustado para la barra de navegación */
-}
+h1 { font-size: 2.2em; }
 
 h2 {
-    font-size: 2.8em; /* Tamaño de los títulos de sección */
+    font-size: 2.8em;
     text-align: center;
-    margin-bottom: 50px; /* Más espacio debajo del título de sección */
+    margin-bottom: 50px;
     position: relative;
-    padding-bottom: 15px; /* Espacio para la línea decorativa */
+    padding-bottom: 15px;
     font-weight: 700;
-    color: var(--color-dark-text); /* Aseguramos color para h2 */
 }
 
-/* Línea decorativa debajo de los títulos de sección */
 h2::after {
     content: '';
     position: absolute;
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    width: 80px; /* Ancho de la línea */
-    height: 5px; /* Grosor de la línea */
+    width: 80px;
+    height: 5px;
     background-color: var(--color-primary-green);
-    border-radius: 2.5px; /* Bordes redondeados */
+    border-radius: 2.5px;
 }
 
 h3 {
@@ -158,7 +95,7 @@ a:hover {
 }
 
 ul {
-    list-style: none; /* Eliminar los puntos de lista por defecto */
+    list-style: none;
 }
 
 p {
@@ -172,55 +109,53 @@ p {
     align-items: center;
     background-color: var(--color-white-bg);
     padding: 15px 30px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
-    z-index: 1000; /* Asegura que la navbar esté siempre arriba */
+    z-index: 1000;
 }
 
 .navbar .logo {
     display: flex;
     align-items: center;
-    gap: 10px; /* Espacio entre el logo y el título */
+    gap: 10px;
 }
 
 .navbar .logo img {
-    height: 60px; /* Ajustado para ser similar al tamaño del título */
-    width: auto; /* Mantiene la proporción de la imagen */
-    object-fit: contain; /* Asegura que la imagen se ajuste bien sin cortar */
+    height: 60px;
+    width: auto;
+    object-fit: contain;
 }
 
 .navbar .logo h1 {
-    font-size: 1.8em; /* Tamaño del título en la navbar */
-    color: var(--color-dark-text);
-    margin-bottom: 0; /* Anula el margen inferior predeterminado del h1 */
-    line-height: 1.2; /* Ajuste para alinear con la imagen */
+    font-size: 1.8em;
+    margin-bottom: 0;
+    line-height: 1.2;
 }
 
 .navbar .nav-links {
     display: flex;
-    gap: 30px; /* Espacio entre los elementos del menú */
+    gap: 30px;
 }
 
 .navbar .nav-links li {
-    position: relative; /* Para el efecto de la línea inferior */
+    position: relative;
 }
 
 .navbar .nav-links a {
     font-family: var(--font-heading);
-    font-weight: 600; /* Seminegrita para los enlaces */
+    font-weight: 600;
     color: var(--color-dark-text);
-    padding: 8px 0; /* Más padding para hacer el área de click más grande */
-    display: block; /* Para que el padding funcione bien */
+    padding: 8px 0;
+    display: block;
     transition: color var(--transition-speed);
 }
 
-/* Efecto de línea inferior al pasar el ratón por los enlaces de la navbar */
 .navbar .nav-links a::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: 0; /* Posicionar la línea en la parte inferior del enlace */
+    bottom: 0;
     width: 0;
     height: 3px;
     background-color: var(--color-primary-green);
@@ -231,43 +166,38 @@ p {
     width: 100%;
 }
 
-/* ESTILOS DE LA SECCIÓN HERO (INICIO) - AHORA CON CARRUSEL */
+/* ESTILOS DE LA SECCIÓN HERO (INICIO) */
 .hero-section {
-    position: relative; /* Esencial para posicionar el carrusel y el contenido */
-    height: 600px; /* Altura fija para el carrusel */
+    position: relative;
+    height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Oculta partes de las imágenes que se salgan */
-    color: var(--color-white-bg); /* Mantiene el color de texto blanco */
+    overflow: hidden;
+    color: var(--color-white-bg);
 }
 
-/* Estilos del contenedor del carrusel */
 .carousel-container {
     width: 100%;
     height: 100%;
-    position: absolute; /* Ocupa todo el espacio de .hero-section */
+    position: absolute;
     top: 0;
     left: 0;
     overflow: hidden;
 }
 
 .carousel-slide {
-    display: flex; /* Para que los items se alineen horizontalmente */
+    display: flex;
     height: 100%;
-    transition: transform 0.5s ease-in-out; /* Transición para el desplazamiento del slide */
+    transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item {
-    min-width: 100%; /* Cada ítem ocupa el 100% del ancho del slide */
+    min-width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    display: flex; /* Para centrar el contenido (si lo hubiera en el item) */
-    justify-content: center;
-    align-items: center;
-    /* Capa oscura sobre cada imagen del carrusel */
     position: relative;
 }
 
@@ -278,36 +208,49 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.45); /* Capa semitransparente oscura */
+    background-color: rgba(0, 0, 0, 0.45);
     z-index: 1;
 }
 
-/* Posicionamiento del contenido del Hero sobre el carrusel */
+.carousel-logo-slide {
+    background-image: none !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-logo-img {
+    height: 60%;
+    width: auto;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+}
+
 .hero-content {
-    position: relative; /* Cambiado de absolute para no depender tanto de la altura del carrusel */
-    z-index: 2; /* Asegura que esté por encima de la capa oscura */
+    position: relative;
+    z-index: 2;
     padding: 30px;
     border-radius: 12px;
-    background-color: rgba(0, 0, 0, 0.3); /* Fondo semitransparente para el texto */
+    background-color: rgba(0, 0, 0, 0.3);
     max-width: 800px;
-    text-align: center; /* Asegura que el contenido esté centrado */
+    text-align: center;
 }
 
 .hero-content h2 {
     font-size: 4em;
     margin-bottom: 20px;
     color: var(--color-white-bg);
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
 }
 
 .hero-content p {
     font-size: 1.6em;
     margin-bottom: 40px;
     color: var(--color-white-bg);
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* Estilos de los botones de navegación del carrusel */
 .carousel-button {
     position: absolute;
     top: 50%;
@@ -318,7 +261,7 @@ p {
     padding: 15px 20px;
     cursor: pointer;
     font-size: 2em;
-    z-index: 3; /* Por encima del contenido y el carrusel */
+    z-index: 3;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
@@ -327,15 +270,9 @@ p {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.carousel-button.prev {
-    left: 20px;
-}
+.carousel-button.prev { left: 20px; }
+.carousel-button.next { right: 20px; }
 
-.carousel-button.next {
-    right: 20px;
-}
-
-/* Estilos de los puntos indicadores */
 .carousel-dots {
     position: absolute;
     bottom: 20px;
@@ -360,7 +297,7 @@ p {
     transform: scale(1.2);
 }
 
-/* Estilo para botones (si se usa) */
+/* Estilos de botones */
 .btn {
     display: inline-block;
     background-color: var(--color-primary-green);
@@ -379,59 +316,130 @@ p {
 
 .btn:hover {
     background-color: var(--color-primary-green-dark);
-    transform: translateY(-3px); /* Pequeño efecto de elevación */
+    transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* ESTILOS DE SECCIONES GENERALES */
+/* SECCIONES GENERALES */
 section {
-    padding: 100px 0; /* Mayor padding para separar secciones */
+    padding: 100px 0;
     text-align: left;
 }
 
-/* SECCIÓN ACERCA DE NOSOTROS */
+/* SECCIÓN ACERCA DE NOSOTROS Y ESTRATEGIA */
 .about-section {
     background-color: var(--color-light-grey-bg);
+}
+
+.about-intro {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #555;
+    text-align: center;
 }
 
 .about-content {
     display: flex;
     flex-wrap: wrap;
-    gap: 50px; /* Más espacio entre las columnas */
+    gap: 20px;
     justify-content: center;
 }
 
-.mission-vision, .values-axes {
-    flex: 1;
-    min-width: 350px; /* Aumentado el ancho mínimo */
+.about-block {
+    flex: 1 1 350px;
     background-color: var(--color-white-bg);
-    padding: 40px; /* Mayor padding interno */
-    border-radius: 12px; /* Bordes más redondeados */
+    padding: 30px;
+    border-radius: 10px;
     box-shadow: var(--box-shadow-light);
-    transition: box-shadow var(--transition-speed);
+    text-align: left;
 }
 
-.mission-vision:hover, .values-axes:hover {
-    box-shadow: var(--box-shadow-hover);
-}
-
-.mission-vision h3, .values-axes h3 {
+.about-block h3 {
     color: var(--color-primary-green);
-    font-size: 2em; /* H3 más grandes */
-    margin-bottom: 20px;
-    border-bottom: 3px solid var(--color-primary-green); /* Línea más gruesa */
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--color-primary-green);
     padding-bottom: 10px;
 }
 
-.about-section ul {
-    list-style: disc; /* Vuelven los puntos de lista */
-    margin-left: 25px; /* Más indentación */
+.about-block ul {
+    list-style: disc;
+    margin-left: 20px;
     color: var(--color-light-text);
 }
 
-.about-section ul li {
-    margin-bottom: 10px;
+.about-block ul li {
+    margin-bottom: 8px;
     font-size: 1.1em;
+}
+
+/* SECCIÓN PROMESA DE VALOR */
+.promesa_valor {
+    padding: 80px 0;
+    background-color: var(--color-light-grey-bg);
+}
+
+.valor-contenido {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.valor-contenido:last-child {
+    margin-bottom: 0;
+}
+
+.huella-img {
+    max-width: 180px;
+    height: auto;
+}
+
+.valor-texto {
+    max-width: 700px;
+}
+
+.valor-titulo {
+    text-align: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    font-size: 2em; /* Aseguramos que el título se vea bien */
+}
+
+.valor-titulo::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    color: var(--color-primary-green);
+    transition: transform var(--transition-speed);
+}
+
+.valor-titulo.open::after {
+    content: '-';
+    transform: translateY(-50%) rotate(180deg); /* Animación para el icono */
+}
+
+.valor-desplegable {
+    display: none;
+    margin-top: 15px;
+}
+
+.valor-texto p {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--color-dark-text);
+    line-height: 1.6;
 }
 
 /* SECCIÓN NUESTROS PROGRAMAS */
@@ -447,13 +455,13 @@ section {
     margin-left: auto;
     margin-right: auto;
     line-height: 1.8;
-    color: var(--color-dark-text); /* Texto oscuro para el intro de programas */
+    color: var(--color-dark-text);
 }
 
 .program-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px; /* Mayor espacio entre las tarjetas */
+    gap: 40px;
 }
 
 .program-card {
@@ -464,17 +472,16 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 380px; /* Asegura una altura mínima para que la imagen se vea bien y el texto quepa */
-    position: relative; /* Para la capa de superposición */
-    overflow: hidden; /* Asegura que la imagen de fondo no se desborde */
-    color: var(--color-white-bg); /* Por defecto, el texto será blanco sobre la imagen */
-    box-shadow: var(--box-shadow-light); /* Mantenemos una sombra base */
+    min-height: 380px;
+    position: relative;
+    overflow: hidden;
+    color: var(--color-white-bg);
+    box-shadow: var(--box-shadow-light);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
 
-/* Capa de superposición para las tarjetas de programa */
 .program-card::before {
     content: '';
     position: absolute;
@@ -482,53 +489,31 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.45); /* Capa oscura semitransparente */
-    z-index: 1; /* Asegura que esté debajo del contenido */
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 1;
     transition: background-color var(--transition-speed);
 }
 
 .program-card:hover::before {
-    background-color: rgba(0, 0, 0, 0.65); /* Más oscuro al pasar el ratón */
+    background-color: rgba(0, 0, 0, 0.65);
 }
 
-/* Asegura que el contenido esté sobre la capa de superposición */
-.program-card h3,
-.program-card p {
+.program-card h3, .program-card p {
     position: relative;
     z-index: 2;
-    color: var(--color-white-bg); /* Texto blanco para legibilidad */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Sombra para el texto */
+    color: var(--color-white-bg);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-.program-card h3 {
-    font-size: 2.2em; /* Ligeramente más grande */
-    margin-bottom: 15px; /* Ajuste para espacio entre título y párrafo */
-}
+.program-card h3 { font-size: 2.2em; margin-bottom: 15px; }
+.program-card p { font-size: 1.05em; line-height: 1.7; }
 
-.program-card p {
-    font-size: 1.05em;
-    line-height: 1.7;
-}
+/* Estilos específicos de imágenes de fondo */
+.program-sattva { background-image: url('../images/satva.jpg'); }
+.program-karuna { background-image: url('../images/karuna.jpg'); }
+.program-dharma { background-image: url('../images/dharma.jpg'); }
+.program-santosha { background-image: url('../images/santosha.jpg'); }
 
-/* Estilos específicos para cada programa con su imagen de fondo - RUTAS CORREGIDAS */
-/* NOTA: 'url('../images/imagen.jpg')' es una ruta relativa desde el CSS (dentro de 'programa') a la carpeta 'images' (fuera de 'programa') */
-.program-sattva {
-    background-image: url('../images/satva.jpg');
-}
-
-.program-karuna {
-    background-image: url('../images/karuna.jpg');
-}
-
-.program-dharma {
-    background-image: url('../images/dharma.jpg');
-}
-
-.program-santosha {
-    background-image: url('../images/santosha.jpg');
-}
-
-/* Efecto hover general de elevación para todas las tarjetas de programa */
 .program-card:hover {
     transform: translateY(-12px);
     box-shadow: var(--box-shadow-hover);
@@ -553,7 +538,7 @@ section {
     font-size: 1.2em;
     margin-bottom: 15px;
     line-height: 1.8;
-    color: var(--color-dark-text); /* Texto oscuro para la información de contacto */
+    color: var(--color-dark-text);
 }
 
 .contact-info strong {
@@ -565,77 +550,32 @@ section {
     font-weight: 600;
 }
 
-.about-section {
-    padding: 100px 20px;
-    background-color: #f9f9f9;
-    text-align: center;
+/* Botón de WhatsApp */
+.whatsapp-boton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
 }
 
-.about-section h2 {
-    font-size: 2.8em;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.about-section h2::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: #4CAF50;
-    margin: 10px auto 0;
-    border-radius: 2px;
-}
-
-.about-intro {
-    max-width: 800px;
-    margin: 0 auto 50px auto;
-    font-size: 1.1em;
-    line-height: 1.7;
-    color: #555;
-}
-
-.about-content {
+.whatsapp-boton a {
     display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: center;
+    align-items: center;
+    background-color: #25D366;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    gap: 10px;
 }
 
-.mission-vision {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    flex: 1 1 300px;
-    max-width: 400px;
-    text-align: left;
-}
-
-.mission-vision h3 {
-    color: #4CAF50;
-    font-size: 1.6em;
-    margin-bottom: 15px;
-    border-bottom: 3px solid #4CAF50;
-    padding-bottom: 10px;
-}
-
-.mission-vision p {
-    font-size: 1em;
-    line-height: 1.6;
-    color: #333;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .about-content {
-        flex-direction: column;
-        gap: 25px;
-    }
-
-    .mission-vision {
-        max-width: 100%;
-    }
+.whatsapp-boton a:hover {
+    background-color: #1ebc59;
+    transform: scale(1.05);
 }
 
 /* PIE DE PÁGINA (FOOTER) */
@@ -645,7 +585,6 @@ footer {
     text-align: center;
     padding: 40px 20px;
     font-size: 0.95em;
-    margin-top: 0; /* Asegura que no haya margen superior */
 }
 
 footer p {
@@ -653,318 +592,79 @@ footer p {
 }
 
 /* MEDIA QUERIES para responsividad */
-
-/* Tablets horizontales y laptops pequeñas (hasta 992px) */
 @media (max-width: 992px) {
-    .container {
-        padding: 0 25px; /* Más padding en los lados */
-    }
-
-    h2 {
-        font-size: 2.5em;
-        margin-bottom: 35px;
-    }
-
-    .hero-content h2 {
-        font-size: 3.5em;
-        margin-bottom: 15px;
-    }
-    .hero-content p {
-        font-size: 1.5em;
-        margin-bottom: 30px;
-    }
-
-    section {
-        padding: 80px 0;
-    }
-
-    .about-content {
-        gap: 40px; /* Reducir espacio entre columnas */
-    }
-    .mission-vision, .values-axes {
-        padding: 35px;
-    }
-    .mission-vision h3, .values-axes h3 {
-        font-size: 1.8em;
-        margin-bottom: 15px;
-    }
-    .about-section ul li {
-        font-size: 1em;
-    }
-
-    .program-grid {
-        gap: 30px; /* Reducir espacio entre tarjetas */
-    }
-    .program-card {
-        padding: 30px;
-        min-height: 350px;
-    }
-    .program-card h3 {
-        font-size: 2em;
-    }
-    .program-card p {
-        font-size: 1em;
-    }
-
-    .contact-info {
-        padding: 35px;
-    }
-    .contact-info p {
-        font-size: 1.1em;
-    }
-}
-.whatsapp-boton {
-    display: flex;
-    justify-content: center;
-    margin: 40px auto 60px auto; /* margen superior e inferior más amplio */
+    .container { padding: 0 25px; }
+    h2 { font-size: 2.5em; margin-bottom: 35px; }
+    .hero-content h2 { font-size: 3.5em; margin-bottom: 15px; }
+    .hero-content p { font-size: 1.5em; margin-bottom: 30px; }
+    section { padding: 80px 0; }
+    .about-content { gap: 40px; }
+    .about-block { padding: 35px; }
+    .about-block h3 { font-size: 1.8em; margin-bottom: 15px; }
+    .about-block ul li { font-size: 1em; }
+    .program-grid { gap: 30px; }
+    .program-card { padding: 30px; min-height: 350px; }
+    .program-card h3 { font-size: 2em; }
+    .program-card p { font-size: 1em; }
+    .contact-info { padding: 35px; }
+    .contact-info p { font-size: 1.1em; }
 }
 
-.whatsapp-boton a {
-    background-color: #25D366;
-    color: white;
-    padding: 14px 30px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.whatsapp-boton a:hover {
-    background-color: #1ebc59;
-    transform: scale(1.05);
-}
-
-/* Tablets verticales y móviles grandes (hasta 768px) */
 @media (max-width: 768px) {
-    /* Navbar */
-    .navbar {
-        flex-direction: column;
-        padding: 15px 20px;
-        align-items: flex-start; /* Alinear a la izquierda cuando se apila */
-    }
-    .navbar .logo {
-        margin-bottom: 15px;
-        flex-direction: row; /* Mantener logo y título en la misma línea */
-        gap: 8px;
-    }
-    .navbar .logo img {
-        height: 50px;
-    }
-    .navbar .logo h1 {
-        font-size: 1.5em;
-    }
-    .navbar .nav-links {
-        flex-direction: column;
-        width: 100%;
-        text-align: left; /* Alinear texto a la izquierda en móviles */
-        gap: 10px;
-        margin-top: 10px;
-    }
-    .navbar .nav-links a {
-        padding: 10px 0;
-        font-size: 1em;
-    }
-    .navbar .nav-links a::after {
-        display: none; /* Ocultar el efecto de línea en móviles */
-    }
-
-    /* Hero Section */
-    .hero-section {
-        height: 500px;
-    }
-    .hero-content {
-        padding: 25px;
-        max-width: 90%;
-    }
-    .hero-content h2 {
-        font-size: 2.8em;
-        margin-bottom: 10px;
-    }
-    .hero-content p {
-        font-size: 1.3em;
-        margin-bottom: 25px;
-    }
-    .carousel-button {
-        padding: 12px 16px;
-        font-size: 1.8em;
-        left: 10px;
-        right: 10px;
-    }
-    .carousel-dots {
-        bottom: 10px;
-    }
-    .dot {
-        width: 10px;
-        height: 10px;
-    }
-
-    /* General Headings */
-    h2 {
-        font-size: 2.2em;
-        margin-bottom: 30px;
-    }
-    h2::after {
-        width: 60px;
-        height: 4px;
-    }
-    h3 {
-        font-size: 1.6em;
-    }
-
-    /* About Section */
-    .about-content {
-        flex-direction: column;
-        gap: 30px;
-    }
-    .mission-vision, .values-axes {
-        min-width: unset; /* Eliminar el min-width para que ocupe todo el ancho */
-        width: 100%;
-        padding: 30px;
-    }
-    .mission-vision h3, .values-axes h3 {
-        font-size: 1.6em;
-        margin-bottom: 12px;
-    }
-    .about-section ul li {
-        font-size: 0.95em;
-    }
-
-
-    /* Programs Section */
-    .programs-intro {
-        font-size: 1.15em;
-        margin-bottom: 40px;
-    }
-    .program-grid {
-        grid-template-columns: 1fr; /* Una columna por tarjeta */
-        gap: 25px;
-    }
-    .program-card {
-        padding: 30px;
-        min-height: 320px;
-    }
-    .program-card h3 {
-        font-size: 1.8em;
-    }
-    .program-card p {
-        font-size: 0.95em;
-    }
-
-    /* Contact Section */
-    .contact-info {
-        padding: 30px;
-    }
-    .contact-info p {
-        font-size: 1.1em;
-    }
-
-    section {
-        padding: 60px 0;
-    }
+    .navbar { flex-direction: column; padding: 15px 20px; align-items: flex-start; }
+    .navbar .logo { margin-bottom: 15px; flex-direction: row; gap: 8px; }
+    .navbar .logo img { height: 50px; }
+    .navbar .logo h1 { font-size: 1.5em; }
+    .navbar .nav-links { flex-direction: column; width: 100%; text-align: left; gap: 10px; margin-top: 10px; }
+    .navbar .nav-links a { padding: 10px 0; font-size: 1em; }
+    .navbar .nav-links a::after { display: none; }
+    .hero-section { height: 500px; }
+    .hero-content { padding: 25px; max-width: 90%; }
+    .hero-content h2 { font-size: 2.8em; margin-bottom: 10px; }
+    .hero-content p { font-size: 1.3em; margin-bottom: 25px; }
+    .carousel-button { padding: 12px 16px; font-size: 1.8em; left: 10px; right: 10px; }
+    .carousel-dots { bottom: 10px; }
+    .dot { width: 10px; height: 10px; }
+    h2 { font-size: 2.2em; margin-bottom: 30px; }
+    h2::after { width: 60px; height: 4px; }
+    h3 { font-size: 1.6em; }
+    .about-content { flex-direction: column; gap: 30px; }
+    .about-block { min-width: unset; width: 100%; padding: 30px; }
+    .about-block h3 { font-size: 1.6em; margin-bottom: 12px; }
+    .about-block ul li { font-size: 0.95em; }
+    .programs-intro { font-size: 1.15em; margin-bottom: 40px; }
+    .program-grid { grid-template-columns: 1fr; gap: 25px; }
+    .program-card { padding: 30px; min-height: 320px; }
+    .program-card h3 { font-size: 1.8em; }
+    .program-card p { font-size: 0.95em; }
+    .contact-info { padding: 30px; }
+    .contact-info p { font-size: 1.1em; }
+    section { padding: 60px 0; }
 }
 
-/* Celulares pequeños (hasta 480px) */
 @media (max-width: 480px) {
-    .container {
-        padding: 0 15px;
-    }
-
-    /* Navbar */
-    .navbar {
-        padding: 10px 15px;
-    }
-    .navbar .logo img {
-        height: 40px;
-    }
-    .navbar .logo h1 {
-        font-size: 1.1em;
-    }
-    .navbar .nav-links a {
-        font-size: 0.9em;
-        padding: 6px 0;
-    }
-
-    /* Hero Section */
-    .hero-section {
-        height: 400px;
-        min-height: 350px;
-    }
-    .hero-content h2 {
-        font-size: 2.2em;
-        margin-bottom: 8px;
-    }
-    .hero-content p {
-        font-size: 1.1em;
-        margin-bottom: 20px;
-    }
-    .carousel-button {
-        padding: 8px 12px;
-        font-size: 1.4em;
-        left: 5px;
-        right: 5px;
-    }
-
-    /* General Headings */
-    h2 {
-        font-size: 1.8em;
-        margin-bottom: 25px;
-    }
-    h2::after {
-        width: 50px;
-        height: 3px;
-    }
-    h3 {
-        font-size: 1.3em;
-    }
-
-    /* About Section */
-    .mission-vision, .values-axes {
-        padding: 25px;
-    }
-    .mission-vision h3, .values-axes h3 {
-        font-size: 1.4em;
-    }
-    .about-section ul li {
-        font-size: 0.9em;
-    }
-
-    /* Programs Section */
-    .programs-intro {
-        font-size: 0.95em;
-        margin-bottom: 25px;
-    }
-    .program-card {
-        min-height: 280px;
-        padding: 20px;
-    }
-    .program-card h3 {
-        font-size: 1.5em;
-    }
-    .program-card p {
-        font-size: 0.85em;
-    }
-
-    /* Contact Section */
-    .contact-info {
-        padding: 25px;
-    }
-    .contact-info p {
-        font-size: 1em;
-    }
-
-    section {
-        padding: 50px 0;
-    }
-
-    footer {
-        padding: 30px 15px;
-        font-size: 0.8em;
-    }
-
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.9em;
-    }
+    .container { padding: 0 15px; }
+    .navbar { padding: 10px 15px; }
+    .navbar .logo img { height: 40px; }
+    .navbar .logo h1 { font-size: 1.1em; }
+    .navbar .nav-links a { font-size: 0.9em; padding: 6px 0; }
+    .hero-section { height: 400px; min-height: 350px; }
+    .hero-content h2 { font-size: 2.2em; margin-bottom: 8px; }
+    .hero-content p { font-size: 1.1em; margin-bottom: 20px; }
+    .carousel-button { padding: 8px 12px; font-size: 1.4em; left: 5px; right: 5px; }
+    h2 { font-size: 1.8em; margin-bottom: 25px; }
+    h2::after { width: 50px; height: 3px; }
+    h3 { font-size: 1.3em; }
+    .about-block { padding: 25px; }
+    .about-block h3 { font-size: 1.4em; }
+    .about-block ul li { font-size: 0.9em; }
+    .programs-intro { font-size: 0.95em; margin-bottom: 25px; }
+    .program-card { min-height: 280px; padding: 20px; }
+    .program-card h3 { font-size: 1.5em; }
+    .program-card p { font-size: 0.85em; }
+    .contact-info { padding: 25px; }
+    .contact-info p { font-size: 1em; }
+    section { padding: 50px 0; }
+    footer { padding: 30px 15px; font-size: 0.8em; }
+    .btn { padding: 10px 20px; font-size: 0.9em; }
 }
