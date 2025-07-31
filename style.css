@@ -71,6 +71,10 @@
     line-height: 1.6; 
 
 }
+.about-content ul {
+    list-style: none;
+    padding-left: 0;
+}
 .cuadro
 {
     background-color: #f4f4f4;
